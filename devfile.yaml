@@ -33,14 +33,14 @@ components:
             memory: 8Gi
             # nvidia.com/gpu: 1 # Uncomment this if the pod shall be scheduled only on a GPU node
     container:
-      image: quay.io/ramalama/ramalama:0.7
+      image: quay.io/ramalama/ramalama:0.15
       args:
         - "ramalama"
         - "--store"
         - "/models"
         - "serve"
         - "--network=none"
-        - "ollama://granite-code:latest"
+        - "ollama://codegemma:2b"
       volumeMounts:
         - name: ramalama-models
           path: /models
